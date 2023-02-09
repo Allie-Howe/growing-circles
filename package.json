@@ -1,0 +1,22 @@
+{
+  "name": "rope",
+  "homepage": "https://allie-howe.github.io/tmp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/p5": "1.5.0",
+    "p5": "1.5.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.12.5",
+    "typescript": "4.9.5"
+  }
+}

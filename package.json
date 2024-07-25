@@ -1,5 +1,5 @@
 {
-  "name": "rope",
+  "name": "p5-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "build": "parcel build index.html --public-url ./"
   },
   "keywords": [],
-  "author": "",
+  "author": "Allie Howe",
   "license": "ISC",
   "dependencies": {
     "p5": "1.5.0"

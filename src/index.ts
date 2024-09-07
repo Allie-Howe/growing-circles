@@ -3,6 +3,7 @@ import { Circle } from './circle'
 import { range } from 'lodash'
 
 export const STROKE_COL = 255
+const CIRCLE_COUNT = 10
 export const getScreenDiameter = (p5: P5) => Math.sqrt(p5.width ** 2 + p5.height ** 2)
 
 
@@ -11,10 +12,9 @@ const sketch = (p5: P5) => {
 
   function populateCircles() {
     circles = []
-    const circleCount = 50
 
-    range(circleCount).forEach(i => (
-      circles.push(new Circle(i * getScreenDiameter(p5)/circleCount))
+    range(CIRCLE_COUNT).forEach(i => (
+      circles.push(new Circle(i * getScreenDiameter(p5)/CIRCLE_COUNT))
     ))
   }
 

@@ -3,7 +3,7 @@ import { Circle } from './circle'
 import { range } from 'lodash'
 
 export const STROKE_COL = 255
-const CIRCLE_COUNT = 10
+const CIRCLE_COUNT = 50
 export const getScreenDiameter = (p5: P5) => Math.sqrt(p5.width ** 2 + p5.height ** 2)
 
 

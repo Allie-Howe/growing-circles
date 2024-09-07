@@ -10,10 +10,15 @@ export class Circle {
     const maxSize = getScreenDiameter(p5)
 
     const size = ((p5.millis()/10) + this.offset) % maxSize
-    const offset = Math.sin(this.offset * p5.millis() / 2e6) * 2
+
+    const wiggle = this.offset > maxSize/2
+    ? maxSize - this.offset
+    : this.offset
+
+    const delta = Math.sin((p5.millis() - wiggle) * 5e-3) * 10
     const opacity = p5.map(size, 0, maxSize, inverse ? 0 : 255, inverse ? 255 : 0)
 
     p5.stroke(STROKE_COL, opacity)
-    p5.circle(0, 0, size + offset)
+    p5.circle(0, 0, size + delta)
   }
 }

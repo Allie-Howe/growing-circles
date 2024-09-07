@@ -1,5 +1,5 @@
 import P5 from 'p5';
-import { STROKE_COL } from '.';
+import { getScreenDiameter, STROKE_COL } from '.';
 
 const inverse = true
 
@@ -7,7 +7,7 @@ export class Circle {
   constructor(private offset = 0) {}
 
   draw(p5: P5) {
-    const maxSize = Math.sqrt(p5.width ** 2 + p5.height ** 2)
+    const maxSize = getScreenDiameter(p5)
 
     const size = ((p5.millis()/10) + this.offset) % maxSize
     const offset = Math.sin(this.offset * p5.millis() / 2e6) * 2

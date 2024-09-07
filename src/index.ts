@@ -3,13 +3,24 @@ import { Circle } from './circle'
 import { range } from 'lodash'
 
 export const STROKE_COL = 255
-const CIRCLE_COUNT = 96
+export const getScreenDiameter = (p5: P5) => Math.sqrt(p5.width ** 2 + p5.height ** 2)
+
 
 const sketch = (p5: P5) => {
-  const circles: Circle[] = []
+  let circles: Circle[] = []
+
+  function populateCircles() {
+    circles = []
+    const circleCount = 50
+
+    range(circleCount).forEach(i => (
+      circles.push(new Circle(i * getScreenDiameter(p5)/circleCount))
+    ))
+  }
 
   p5.windowResized = () => {
     p5.resizeCanvas(window.innerWidth, window.innerHeight)
+    populateCircles()
   }
 
   p5.setup = () => {
@@ -20,10 +31,8 @@ const sketch = (p5: P5) => {
     p5.strokeWeight(8)
     p5.stroke(STROKE_COL)
 
-    range(CIRCLE_COUNT).forEach(i => (
-      circles.push(new Circle(i * 100))
-    ))
-}
+    populateCircles()
+  }
 
   p5.draw = () => {
     p5.background(0);

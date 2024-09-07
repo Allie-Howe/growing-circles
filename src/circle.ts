@@ -1,7 +1,7 @@
 import P5 from 'p5';
 import { STROKE_COL } from '.';
 
-const inverse = false
+const inverse = true
 
 export class Circle {
   constructor(private offset = 0) {}

@@ -1,6 +1,10 @@
 # p5-boilerplate
 Boilerplate code for a node-based p5.js sketch using Typescript and Parcel
 
+## Prerequisites
+- [Node.js](https://nodejs.org/en/download/package-manager)
+- pnpm (`npm i -g pnpm` after installing Node.js)
+
 ## To start:
 1. Clone repo locally
 2. Run `pnpm i` to install p5 and Parcel
